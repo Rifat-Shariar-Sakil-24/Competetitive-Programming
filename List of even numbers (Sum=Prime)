@@ -1,0 +1,46 @@
+#define ll long long
+#define MAX 1000000
+vector<bool> isprime(MAX+1);
+vector <ll> primes;
+map <ll,ll> ase,pai;
+
+void sieve()
+{
+    for(int i=3; i*i<=MAX; i+=2)
+    {
+        if(isprime[i]==false)
+        {
+            for(int j=i*i; j<=MAX; j+=2*i)
+            {
+                isprime[j] = true;
+            }
+        }
+    }
+
+    primes.push_back(2);
+
+    for(int i=3; i<=MAX; i+=2)
+    {
+        if(isprime[i]==false){ase[i]=1; primes.push_back(i);}
+    }
+} 
+vector <ll> liste;
+map <ll,ll> pau;
+void list_of_even_numbers_equal_to_prime()
+{
+   listp.push_back(1);
+   pau[1] = 1;
+   ll j = 2,joma=1,k=1;
+   while(1)
+   {
+    j+=2;
+    if(ase[j+joma])
+    {
+      listp.push_back(j);
+      k++;
+      pau[j] = k;
+      joma+=j;
+    }
+    if(k>100) break;
+   }
+}
